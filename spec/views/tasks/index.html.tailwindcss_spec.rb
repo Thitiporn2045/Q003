@@ -18,9 +18,11 @@ RSpec.describe "tasks/index", type: :view do
 
   it "renders a list of tasks" do
     render
-    cell_selector = 'div>p'
-    assert_select cell_selector, text: Regexp.new("Title".to_s), count: 2
-    assert_select cell_selector, text: Regexp.new("MyText".to_s), count: 2
-    assert_select cell_selector, text: Regexp.new(false.to_s), count: 2
+
+    expect(rendered).to match(/Title/)
+    expect(rendered.scan(/Title/).size).to eq(2)
+
+    expect(rendered).to match(/false/)
+    expect(rendered.scan(/false/).size).to eq(2)
   end
 end

@@ -11,5 +11,7 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe TasksHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+    it 'checks that app/helpers/tasks_helper.rb file exists' do
+    expect(File).to exist(Rails.root.join('app', 'helpers', 'tasks_helper.rb'))
+  end
 end

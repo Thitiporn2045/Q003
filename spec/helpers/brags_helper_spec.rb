@@ -11,5 +11,7 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe BragsHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it 'checks that app/helpers/brags_helper.rb file exists' do
+    expect(File).to exist(Rails.root.join('app', 'helpers', 'brags_helper.rb'))
+  end
 end
